@@ -16,17 +16,19 @@ include "head.php";
             <?php
             require '../inc/myconnect.php';
             //lay san pham theo id
-            $sodh = $_GET["sodh"];
-            $query = "SELECT * from hoadon
-	WHERE  sodh =" . $sodh;
+            $id = $_GET["id"];
+            $query = "SELECT s.ID,s.Ten,s.date,s.Gia,s.HinhAnh,s.KhuyenMai,s.giakhuyenmai,s.Mota, n.Ten as Tennhasx,s.Manhasx
+   from sanpham s 
+   LEFT JOIN nhaxuatban n on n.ID = s.Manhasx
+	WHERE  s.id =" . $id;
             $result = $conn->query($query);
             $row = $result->fetch_assoc();
 
             ?>
             <section class="content-header">
                 <h1>
-                    Thông tin
-                    <small>hóa đơn</small>
+                    Chi tiết
+                    <small>Sách</small>
                 </h1>
             </section>
 
@@ -41,50 +43,81 @@ include "head.php";
                         <!-- Horizontal Form -->
                         <div class="box box-info">
                             <div class="box-header with-border">
-                                <h3 class="box-title" style="text-align: center"> Thông tin hóa đơn</h3>
+                                <h3 class="box-title">Chi tiết Sách</h3>
                             </div><!-- /.box-header -->
                             <!-- form start -->
                             <form class="form-horizontal">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label class="col-sm-2">Số đơn hàng:</label>
+                                        <label class="col-sm-2">Tên:</label>
                                         <div class="col-sm-5">
-                                            <p><?php echo $row["sodh"] ?></p>
+                                            <p><?php echo $row["Ten"] ?></p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2">Tên khách hàng:</label>
-                                        <div class="col-sm-5">
-                                            <p><?php echo $row["tenkh"] ?></p>
+                                        <label class="col-sm-2">Hình ảnh:</label>
+                                        <div class="col-sm-2">
+                                            <p><img src="../images/<?php echo $row["HinhAnh"] ?>" style="width:300px;height:300px"></p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2 ">Email khách hàng:</label>
+                                        <label class="col-sm-2 ">Nhà xuất bản:</label>
                                         <div class="col-sm-5">
-                                            <p><?php echo $row["emailkh"] ?></p>
+                                            <p><?php echo $row["Tennhasx"] ?></p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2 ">Địa chỉ giao hàng:</label>
+                                        <label class="col-sm-2 ">Ngày:</label>
                                         <div class="col-sm-5">
-                                            <p><?php echo $row["diachi"] ?></p>
+                                            <p><?php echo $row["date"] ?></p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2 ">Điện thoại khách hàng:</label>
+                                        <label class="col-sm-2 ">Giá:</label>
                                         <div class="col-sm-5">
-                                            <p><?php echo $row["dienthoai"] ?></p>
+                                            <p><?php echo $row["Gia"] ?>.000 VNĐ</p>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 ">Hình thức thanh toán:</label>
-                                        <div class="col-sm-5">
-                                            <p><?php echo $row["hinhthucthanhtoan"] ?></p>
+                                    <?php
+                                    if ($row["KhuyenMai"]  == 1) {
+                                    ?>
+                                        <div class="form-group">
+                                            <label class="col-sm-2">Khuyến mãi:</label>
+                                            <div class="col-sm-5">
+                                                <p style="color:red">Có khuyến mãi</p>
+                                            </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2">Giá khuyến mãi:</label>
+                                            <div class="col-sm-5">
+                                                <p style="color:red"><?php echo $row["giakhuyenmai"] ?>.000 VNĐ</p>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($row["KhuyenMai"]  == 0) {
+                                    ?>
+                                        <div class="form-group">
+                                            <label class="col-sm-2">Khuyến mãi:</label>
+                                            <div class="col-sm-5">
+                                                <p style="color:red">Không có khuyến mãi</p>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 ">Mô tả: </label>
+                                        <div class="col-sm-5">
+                                            <p><?php echo $row["Mota"] ?></p>
+                                        </div>
+
                                     </div>
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <a href="quanlyhoadon.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
+                                    <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
                                 </div><!-- /.box-footer -->
                             </form>
                         </div><!-- /.box -->
