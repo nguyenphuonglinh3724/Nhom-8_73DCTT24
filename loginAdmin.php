@@ -16,6 +16,6 @@ if (isset($_POST['dnhapadmin'])) {
             $row = $result->fetch_assoc();
         }
     } else {
-        $kq = "Thông tin không đúng vui lòng kiềm tra lại";
+        $kq = "Sai thông tin. Hãy nhập lại";
     }
 }
