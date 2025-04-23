@@ -6,11 +6,11 @@
                 <div class="col-md-3 col-footer footer-1">
                     <h5>Group 8</h5>
                     <ul class="list-unstyled">
-                        <li>Vũ Thị Minh Thư-73DCTTXXXXX</li>
-                        <li>Trần Quang Huy-73DCTTXXXXX </li>
-                        <li>Nguyễn Quách Công Đạt-73DCTTXXXXX</li>
-                        <li>Nguyễn Phượng Linh-73DCTTXXXXX</li>
-                        <li>Lê Anh Quân-73DCTT22142  </li>
+                        <li>Vũ Thị Minh Thư</li>
+                        <li>Trần Quang Huy</li>
+                        <li>Nguyễn Quách Công Đạt</li>
+                        <li>Nguyễn Phượng Linh</li>
+                        <li>Lê Anh Quân</li>
                     </ul>
                 </div>
 
