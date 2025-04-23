@@ -39,7 +39,7 @@ include "navigation.php"
 			$sl = 1;
 		}
 		$_SESSION['cart'][$idsp] = $sl;
-		echo "<script>window.location.replace('http://localhost:3000/cart.php'); </script>";
+		echo "<script>window.location.replace('cart.php'); </script>";
 	}
 
 	?>

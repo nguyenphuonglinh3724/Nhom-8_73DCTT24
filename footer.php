@@ -4,11 +4,13 @@
             <div class="row">
                 <!-- Company Information -->
                 <div class="col-md-3 col-footer footer-1">
-                    <h5>Group 7</h5>
+                    <h5>Group 8</h5>
                     <ul class="list-unstyled">
-                        <li>Giang Quốc Hào - 26/09/2003</li>
-                        <li>Lý Hồng Bính - 20/10/2003</li>
-                        <li>Trần Chí Đức - 10/05/2003</li>
+                        <li>Vũ Thị Minh Thư-73DCTTXXXXX</li>
+                        <li>Trần Quang Huy-73DCTTXXXXX </li>
+                        <li>Nguyễn Quách Công Đạt-73DCTTXXXXX</li>
+                        <li>Nguyễn Phượng Linh-73DCTTXXXXX</li>
+                        <li>Lê Anh Quân-73DCTT22142  </li>
                     </ul>
                 </div>
 
@@ -16,9 +18,9 @@
                 <div class="col-md-3 col-footer footer-2">
                     <h5>Contact Us</h5>
                     <ul class="list-unstyled">
-                        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:info@company.com">nhom7@company.com</a></li>
+                        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:info@company.com">nhom88@company.com</a></li>
                         <li><i class="fas fa-phone"></i> Phone: +84 123 456 789</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Address: 218 Lĩnh Nam, Hoàng Mai, Hà Nội</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Address: Triều Khúc,Thanh Xuân,Hà Nội</li>
                     </ul>
                 </div>
 
